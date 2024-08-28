@@ -1,0 +1,8 @@
+.promo-banner-bg {
+  background-color: #006400;
+  background-position: top;
+  background-size: auto;
+  background-position-x: center;
+  background-clip: padding-box;
+  background-blend-mode: multiply;
+}

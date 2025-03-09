@@ -29,10 +29,10 @@
             </a>
         </div>
         <div class="row row-cols-1 row-cols-md-2 mb-5">
-            <div class="col mb-3 qr mb-md-0">
-                <img src="img/qr1.jpg" class="img-fluid rounded-25 float-start" alt="qr">
+        <div class="col mb-3 qr mb-md-0">
+    <img src="img/qr1.jpg" class="img-fluid rounded-25 float-start" alt="qr" style="width: 90%;">
+</div>
 
-            </div>
 
 
 

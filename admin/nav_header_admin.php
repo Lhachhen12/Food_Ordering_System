@@ -37,7 +37,7 @@
                         <li class="nav-item">
                             <a href="admin_customer_detail.php?c_id=<?php echo $_SESSION["aid"] ?>"
                                 class="nav-link px-2 text-dark">
-                                Welcome, <?= $_SESSION['firstname'] ?>
+                                👋 welcome, <?= $_SESSION['firstname'] ?>
                                 <i class="bi bi-person-circle"></i>
                             </a>
                         </li>

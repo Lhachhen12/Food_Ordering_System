@@ -33,15 +33,21 @@
                     minlength="5" maxlength="45" required>
                 <label for="username">Username</label>
             </div>
-            <div class="form-floating mb-2">
+            <div class="form-floating mb-2 position-relative">
                 <input type="password" class="form-control" id="pwd" placeholder="Password" name="pwd" minlength="8"
                     maxlength="45" required>
                 <label for="pwd">Password</label>
+                <button type="button" class="btn position-absolute end-0 top-50 translate-middle-y border-0 bg-transparent" id="togglePassword">
+                    <i class="bi bi-eye-slash" id="toggleIcon"></i>
+                </button>
             </div>
-            <div class="form-floating mb-2">
+            <div class="form-floating mb-2 position-relative">
                 <input type="password" class="form-control" id="cfpwd" placeholder="Confirm Password" minlength="8"
                     maxlength="45" name="cfpwd" required>
                 <label for="cfpwd">Confirm Password</label>
+                <button type="button" class="btn position-absolute end-0 top-50 translate-middle-y border-0 bg-transparent" id="toggleConfirmPassword">
+                    <i class="bi bi-eye-slash" id="toggleConfirmIcon"></i>
+                </button>
                 <div id="passwordHelpBlock" class="form-text smaller-font">
                     Your password must be at least 8 characters long.
                 </div>
@@ -88,6 +94,41 @@
         </form>
     </div>
     <div class="container mt-4"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Password toggle functionality
+            const togglePassword = document.getElementById('togglePassword');
+            const password = document.getElementById('pwd');
+            const toggleIcon = document.getElementById('toggleIcon');
+            
+            togglePassword.addEventListener('click', function() {
+                // Toggle the type attribute
+                const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+                password.setAttribute('type', type);
+                
+                // Toggle the icon
+                toggleIcon.classList.toggle('bi-eye');
+                toggleIcon.classList.toggle('bi-eye-slash');
+            });
+            
+            // Confirm Password toggle functionality
+            const toggleConfirmPassword = document.getElementById('toggleConfirmPassword');
+            const confirmPassword = document.getElementById('cfpwd');
+            const toggleConfirmIcon = document.getElementById('toggleConfirmIcon');
+            
+            toggleConfirmPassword.addEventListener('click', function() {
+                // Toggle the type attribute
+                const type = confirmPassword.getAttribute('type') === 'password' ? 'text' : 'password';
+                confirmPassword.setAttribute('type', type);
+                
+                // Toggle the icon
+                toggleConfirmIcon.classList.toggle('bi-eye');
+                toggleConfirmIcon.classList.toggle('bi-eye-slash');
+            });
+        });
+    </script>
+
     <?php include ('footer.php') ?>
 </body>
 

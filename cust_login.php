@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <?php session_start();
     include ("conn_db.php");
     include ('head.php'); ?>
     <meta charset="UTF-8">
-
     <link href="css/login.css" rel="stylesheet">
-
     <title>Log in | St.Lawrence-Cafeteria</title>
 </head>
 
@@ -32,10 +29,13 @@
                     required>
                 <label for="floatingInput">Username</label>
             </div>
-            <div class="form-floating mb-2">
+            <div class="form-floating mb-2 position-relative">
                 <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="pwd"
                     required>
                 <label for="floatingPassword">Password</label>
+                <button type="button" class="btn position-absolute end-0 top-50 translate-middle-y border-0 bg-transparent" id="togglePassword">
+                    <i class="bi bi-eye-slash" id="toggleIcon"></i>
+                </button>
             </div>
             <button class="w-100 btn btn-success mb-3" type="submit">Log In</button>
             <a class="nav nav-item text-decoration-none text-muted mb-2 small" href="admin/admin_login.php">
@@ -49,7 +49,25 @@
             </a>
         </form>
     </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const togglePassword = document.getElementById('togglePassword');
+            const password = document.getElementById('floatingPassword');
+            const toggleIcon = document.getElementById('toggleIcon');
+            
+            togglePassword.addEventListener('click', function() {
+                // Toggle the type attribute
+                const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+                password.setAttribute('type', type);
+                
+                // Toggle the icon
+                toggleIcon.classList.toggle('bi-eye');
+                toggleIcon.classList.toggle('bi-eye-slash');
+            });
+        });
+    </script>
+    
     <?php include ('footer.php') ?>
 </body>
-
 </html>

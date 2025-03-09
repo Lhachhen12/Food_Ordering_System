@@ -1,5 +1,5 @@
 <?php
-$mysqli = new mysqli("localhost", "root", "", "Stlawrence");
+$mysqli = new mysqli("localhost", "root", "", "stlawrence");
 if ($mysqli->connect_errno) {
     header("location:db_error.php");
     exit(1);
